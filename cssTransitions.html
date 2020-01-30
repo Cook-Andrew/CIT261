@@ -10,11 +10,9 @@
 <body>
     <div class="box" ></div>
     <div class="box"></div>
-    <div id="secondBox" onclick="clickBox()"></div>
+    <div class="secondBox" style="">some text here</div>
     <script>
-        funcion clickBox(){
-            document.getElementsById("secondBox").style.top = "10px";
-        }
+        document.getElementsByClassName("secondBox").style.cssText = "color: blue;"
     </script>
 </body>
 

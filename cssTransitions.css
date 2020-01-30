@@ -22,7 +22,7 @@
     left: 30vw;
 }
 
-#secondBox {
+.secondBox {
     position: absolute;
     top: 0;
     left: 30vw;
