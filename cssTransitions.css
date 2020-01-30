@@ -1,0 +1,32 @@
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30vw;
+    height: 30vw;
+    background-color: cyan;
+    transition-duration: 1000ms;
+    /*transition-property: all; is intensive on the hardware so list each individually*/
+    transition-property: background-color, transform, top, left;
+    transition-timing-function: ease-in;
+    /* ease-out, cubic-bezier(#,#,#,#)*/
+    transition-delay: 500ms;
+    /*use transition: if you want a sequence*/
+    /*transition: duration property function delay, secondtransition, thirdtransition*/
+}
+
+.box:hover {
+    background-color: magenta;
+    transform: rotate(45deg);
+    top: 30vh;
+    left: 30vw;
+}
+
+#secondBox {
+    position: absolute;
+    top: 0;
+    left: 30vw;
+    width: 30vw;
+    height: 30vw;
+    background-color: yellow;
+}
