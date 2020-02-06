@@ -1,0 +1,10 @@
+{
+    "playerOne" : {
+        "user": "bob",
+        "password": "catLover91"
+    },
+    "playerTwo" : {
+        "user": "randy",
+        "password": "catLover92"
+    }
+}
