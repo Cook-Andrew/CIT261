@@ -15,6 +15,7 @@
             if (request.status >= 200 && request.status < 400) {
                 // Success!
                 var data = JSON.parse(request.responseText);
+                //RIGHT HERE
                 document.write(data.playerOne.user);
                 document.write("<br/>");
                 document.write(data.playerTwo.user);
