@@ -1,9 +1,33 @@
-1<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
 
-    </head>
-    <body>
-        <p>The Document Object Model</p>
-    </body>
+<head>
+
+</head>
+
+<body>
+    <p>The Document Object Model</p>
+    <script>
+        var div1 = document.createElement("DIV"); // Create a <div> element
+        div1.innerHTML = "The Document is like a peice of paper folded in half."; // Set the contents of the DIV
+        document.body.appendChild(div1); // Add <div> to <body>
+        var btn1 = document.createElement("BUTTON"); //Create a button
+        var btn2 = document.createElement("BUTTON");
+        btn1.innerHTML = "Next";
+        btn2.innerHTML = "Okay...";
+        document.body.appendChild(btn1);
+        btn1.onclick = function () {
+            div1.innerHTML = "The top half of the fold is the head"; //changing an existing element
+            btn1.onclick = function () {
+            div1.innerHTML = "The bottom half of the fold is the body. ";
+            div1.insertBefore(btn2,div1.childNodes[1]); //adding an element before an existing one with the childNodes array
+            document.body.removeChild(document.body.childNodes[5]) //deleting an element by it's array index
+        }
+        }
+        btn2.onclick = function (){
+            div1.innerHTML = "The two elements are the Document's children. Any of these element's children are the Document's grand children.<br/>These elements can be manipulated with JavaScript<br/>All of this text and these buttons were created, removed, and/or changed with JavaScript. Check out the source code!";
+        }
+    </script>
+</body>
+
 </html>
