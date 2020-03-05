@@ -16,10 +16,20 @@
     <input type="button" value="Load" onclick="load()">
     <script>
         function save(){
-
+            var boxValue = document.getElementById("field1").value;
+            sessionStorage.setItem('box1', boxValue);
+            boxValue = document.getElementById("field2").value;
+            localStorage.setItem('box2', boxValue);
         }
         function load(){
-
+            var boxValue = document.getElementById("field3").value;
+            document.write("Saved Session Storage is explicitly saved, but disappears when you end a session. <br/>");
+            document.write("Session Storage: " + sessionStorage.getItem('box1'));
+            document.write("<br/> <br/>Saved Local Storage persists when you close a page, with NO expiration date. <br/>");
+            document.write("Local Storage: " + localStorage.getItem('box2'));
+            document.write("<br/> <br/>Declaring a variable temporarily stores a value for immediate use, but doesn't explicitly save it.<br/>");
+            document.write("Variable: " + boxValue);
+            document.write("<br/><br/><button onclick='location.reload()'>reload</button>");
         }
     </script>
 </html>
