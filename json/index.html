@@ -15,22 +15,27 @@
             if (request.status >= 200 && request.status < 400) {
                 // Success!
                 var data = JSON.parse(request.responseText);
-                //RIGHT HERE
+                //WRITE HERE
                 document.write(data.playerOne.user);
                 document.write("<br/>");
                 document.write(data.playerTwo.user);
             } else {
-                // We reached our target server, but it returned an error
+                // it returned an error
 
             }
         };
-
+        
         request.onerror = function () {
             // There was a connection error of some sort
         };
 
         request.send()
+        //this form of Ajax is incredibly frustrating, because You can't 
+        // save the data you get to a global variable, even if you declare it outside of
+        // the #object_name#.onload. you have to write your code inside of the onload function
 
+        /* AJAX with JQUERRY IS SO MUCH EASIER, but I put the original java script version above because you can't
+        truly understand how JQUERRY works if you don't understand how the basic JS it's built on works.*/
         //$("button").click(function(){
         //$.getJSON("demo_ajax_json.js", function(result){
         //$.each(result, function(i, field){
