@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>objects</title>
+</head>
+
+<body>
+    <script>
+        document.write("All of the explanations of what is happening is commented in the source.<br/><br/>");
+        //we are creating this in the context of a video game where each user may have multiple characters
+        //first create a class
+        function User(username, name, password, email) {
+            //constructor
+            this.username = username;
+            this.name = name;
+            this.password = password;
+            this.email = email;
+        }
+        //this is how you define methods. You have to use prototype to add to the constructor
+        User.prototype.someMethod = function () {
+            document.write("Output: I am " + this.name + " and my user name is " + this.username);
+        }
+        //to test it, we'll create an instance of the class - an object
+        let userOne = new User('catLover98', 'Bob', 'Ilovecats1!', 'cat_lover@cats.com');
+        userOne.someMethod();
+
+        //let's create a child. Use call to inherit parameters
+        function Character(username, name, password, email, characterName) {
+            User.call(this, username, name, password, email); //as you can see, this constructor inherited some params
+            this.characterName = characterName; //and created other new params
+        }
+        /* you can also create an object with Object.create(Object.prototype,{}); */
+
+        //we also need to add another line to inherit the methods
+        Character.prototype = Object.create(User.prototype);
+        document.write("<br/>");
+
+        //lets give the child a method that the parent doesn't have
+        Character.prototype.anotherMethod = function(){
+            document.write("<br/>This is a function only the child has. My character is named: " + this.characterName);
+        }
+
+        //let's test it
+        let characterOne = new Character('doggoBoy2', 'Henry', 'Idogtherefor1am@', 'email@email.com', 'Gandalf');
+        characterOne.someMethod();
+        characterOne.anotherMethod();
+
+        //if we want to change a property, we can do it two ways
+        characterOne.username = 'Henry_the_8th';
+        document.write("<br/>");
+        characterOne.someMethod();
+        characterOne["name"] = 'Eight'; //remember quotations
+        document.write("<br/>");
+        characterOne.someMethod();
+
+        // you can loop through properties
+        for (i in characterOne){
+            document.write("<br/>" + characterOne[i]);
+        }
+        /* unlike an array, order of properties is hard to define, but having a name or a key is a worthwhile advantage */
+        
+        //you can create an object  on the spot without a constructor class like this:
+        var person = {firstName:"John", lastName:"Doe", age:27}; // this is useful for JSON
+        for (i in person){
+            document.write("<br/>" + person[i]);
+        }
+        //if you try to create an associative array, it will just automatically create an object like the one above.
+    </script>
+</body>
+
+</html>
