@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <title>cit261 json parse and stringify</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <input type="text" id="field1" value="foo" >
+    <input type="text" id="field2" value="bar" >
+    <input type="text" id="field3" value="fez" >    
+    <input type="button" value="Save" onclick="save()">
+    <input type="button" value="Recall" onclick="recall()">
+    <script>
+        var obj = {};
+        function save(){
+            // pull the data from the three fields and save to variable
+            var one = document.getElementById("field1").value;
+            var two = document.getElementById("field2").value;
+            var three = document.getElementById("field3").value;
+            //create an object with those three variable
+            obj = {val1: one, val2: two, val3: three};
+            //save the object as a JSON string
+            localStorage.setItem('json', JSON.stringify(obj));
+        }
+        function recall(){
+            //load the JSON string
+            var jsonString = localStorage.getItem('json');
+            //parse the string back into another object
+            var diffObj = JSON.parse(jsonString);
+            //write the values from the object
+            document.write("the first box contained: " + diffObj.val1);
+            document.write(" the second box contained: " + diffObj.val2);
+            document.write(" the third box contained: " + diffObj.val3);
+            document.write("<br/><button onclick='location.reload()'>reload</button>");
+        }
+    </script>
+</body>
+
+</html>
