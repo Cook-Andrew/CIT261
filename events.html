@@ -62,9 +62,6 @@
         function transitionClick() {
             tDiv.classList.add("resize");
         }
-        tDiv.ontransitionrun = function () {
-            tLbl.innerHTML = "Transition run";
-        }
         tDiv.ontransitionend = function () {
             tLbl.innerHTML = "Transition end";
             tDiv.classList.remove("resize");
@@ -77,7 +74,7 @@
         function animationClick() {
             aDiv.classList.add("animate");
         }
-        aDiv.onanimationrun = function () {
+        aDiv.onanimationstart = function () {
             aLbl.innerHTML = "Animation run";
         }
         aDiv.onanimationend = function () {
