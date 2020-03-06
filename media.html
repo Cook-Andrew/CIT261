@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>media</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <video src="dog.mp4" controls width="400px" autoplay loop>
+        Your browser does not support HTML5 video.</video>
+    <p>this video has the attributes: controls, autoplay, and loop</p>
+    <p>Dog video free from Pexel</p>
+
+    <audio id="audioElement" src="dramatic.mp3">Your browser does not support HTML5 audio</audio>
+    <label>play music </label><button id="playButton">▶</button>
+    <p> if you disable controls, you can still control the media file with other elements using java script, like this &#60;button&#62; element</p>
+    <p></p>
+    <script>
+        var audioElem = document.getElementById("audioElement");
+        var btn1 = document.getElementById("playButton");
+
+        btn1.onclick = function () {
+            if (audioElem.paused)
+                audioElem.play();
+            else
+                audioElem.pause();
+        }
+    </script>
+</body>
+
+</html>
