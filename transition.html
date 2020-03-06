@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Transition</title>
+        <meta charset="utf-8">
+        <style>
+            #div1{
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                transition: 2s background-color 2s, width 1s, height 9s; /*each property is comma sepparated*/
+            }
+            #div1:hover{
+                width: 300px;
+                height: 400px;
+                background-color: blue;
+            }#div2{
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                transition: 200ms all 2s; /*all demonstration. units can be measured in ms or seconds*/
+            }
+            #div2:hover{
+                width: 300px;
+                height: 400px;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <p>Transition can have three properties: delay, property to transition, and duration of transition</p>
+        <p>You can set these each individually, but there is a shortcut combined version</p>
+        <p>You put duration first, then the property. If you want to affect all properties at the same time, you use 'all'. finally, you set the delay.</p>
+    </body>
+</html>

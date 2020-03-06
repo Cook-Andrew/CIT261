@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Transform</title>
+    <meta charset="utf-8">
+    <style>
+        #divOne {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            transition: all 2s;
+        }
+
+        #divOne.transformIt {
+            transform: translate(250px, 250px) scale(2, 2) rotate(45deg); /*space sepparated*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divOne"></div>
+    <p>the easiest way to animate or transition an object is by adding a class.</p>
+    <button id="btnOne">example</button>
+    <button id="btnTwo">reset</button>
+    <script>
+        var div1 = document.getElementById("divOne");
+        var btn1 = document.getElementById("btnOne");
+        var btn2 = document.getElementById("btnTwo");
+        btn1.onclick = function () {
+            div1.classList.add("transformIt");
+        }
+        btn2.onclick = function () {
+            div1.classList.remove("transformIt");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Animation</title>
+    <meta charset="utf-8">
+    <style>
+        /*You need a keyframs rule to define an animation. 
+        you can define 'from' and 'to' or percentages.*/
+        @keyframes example {
+            0% {
+                background-color: red;
+            }
+
+            25% {
+                background-color: yellow;
+            }
+
+            50% {
+                background-color: blue;
+            }
+
+            100% {
+                background-color: green;
+            }
+        }
+
+        #divOne {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        /* you *could* type everything out individually like so:
+
+        #divOne.animateIt {
+            animation-name: example;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+            But shorthand is pretty awesome*/
+
+        #divOne.animateIt {
+            animation: example 5s linear 0s infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divOne"></div>
+    <p>the easiest way to animate or transition an object is by adding a class.</p>
+    <button id="btnOne">example</button>
+    <button id="btnTwo">reset</button>
+    <script>
+        var div1 = document.getElementById("divOne");
+        var btn1 = document.getElementById("btnOne");
+        var btn2 = document.getElementById("btnTwo");
+        btn1.onclick = function () {
+            div1.classList.add("animateIt");
+        }
+        btn2.onclick = function () {
+            div1.classList.remove("animateIt");
+        }
+    </script>
+</body>
+
+</html>
