@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>css classes</title>
+</head>
+
+<body>
+    <div id="one">Click this text to change the second div on the page with the id "two."</div><br />
+    <div id="two" class="group">click this text to change the group of divs with the class "group."</div><br />
+    <div id="three" class="group">Click this to reset all the divs on the page. <em>check out the comments in the source!</em></div><br />
+    <script>
+        //to change an element with CSS first you must select it
+        var one = document.getElementById(
+        "one"); // there should only be on of each id on the page, but if there are multiples, it calls the first
+        var two = document.getElementById("two");
+        var three = document.getElementById("three");
+        var group = document.getElementsByClassName("group"); // this is indexed like an array
+        var all = document.getElementsByTagName("DIV"); // this is also indexed
+
+        //then you change the style attribute with a method. super simple.
+        one.onclick = function () {
+            two.style.color = "blue";
+        };
+        // you can iterate through the index
+        two.onclick = function () {
+            for (i in group) {
+                group[i].style.color = "red";
+            }
+        }
+        three.onclick = function () {
+            for (i in all) {
+                all[i].style.color = "black";
+            }
+        }
+        // style can change anything you can do with css. this includes but is not limited to display, color, size, font, border, transitions, and animations.
+    </script>
+</body>
+
+</html>
