@@ -4,7 +4,7 @@
         <title>Events</title>
         <meta charset="utf-">
         <style>
-            #mobileDiv{
+            #mobileDiv, #computerDiv{
                 border: 1px solid black;
                 width: 400px;
                 height: 400px;
@@ -13,10 +13,32 @@
     </head>
     <body>
         <div id="mobileDiv" >Touch Event Area</div>
+        <br/>
+        <div id="computerDiv" >Click Event Area</div>
         <script>
             mDiv = document.getElementById("mobileDiv");
             mDiv.ontouchstart = function(){
                 mDiv.innerHTML = "touch";
+            }
+            mDiv.ontouchmove = function(){
+                mDiv.innerHTML = "swipe";
+            }
+            mDiv.ontouchend = function(){
+                mDiv.innerHTML = "Touch Event Area";
+            }
+            
+            cDiv = document.getElementById("computerDiv");
+            cDiv.onclick = function(){
+                cDiv.innerHTML = "click";
+            }
+            cDiv.onmousedown = function(){
+                cDiv.innerHTML = "long click";
+            }
+            cDiv.onmouseenter = function(){
+                cDiv.innerHTML = "hover";
+            }
+            cDiv.onmouseleave = function(){
+                cDiv.innerHTML = "Click Event Area";
             }
         </script>
     </body>
