@@ -1,45 +1,73 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <title>Events</title>
-        <meta charset="utf-">
-        <style>
-            #mobileDiv, #computerDiv{
-                border: 1px solid black;
-                width: 400px;
-                height: 400px;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="mobileDiv" >Touch Event Area</div>
-        <br/>
-        <div id="computerDiv" >Click Event Area</div>
-        <script>
-            mDiv = document.getElementById("mobileDiv");
-            mDiv.ontouchstart = function(){
-                mDiv.innerHTML = "touch";
-            }
-            mDiv.ontouchmove = function(){
-                mDiv.innerHTML = "swipe";
-            }
-            mDiv.ontouchend = function(){
-                mDiv.innerHTML = "Touch Event Area";
-            }
-            
-            cDiv = document.getElementById("computerDiv");
-            cDiv.onclick = function(){
-                cDiv.innerHTML = "clicked";
-            }
-            cDiv.onmousedown = function(){
-                cDiv.innerHTML = "long click";
-            }
-            cDiv.onmouseenter = function(){
-                cDiv.innerHTML = "hover";
-            }
-            cDiv.onmouseleave = function(){
-                cDiv.innerHTML = "Click Event Area";
-            }
-        </script>
-    </body>
+
+<head>
+    <title>Events</title>
+    <meta charset="utf-">
+    <style>
+        #mobileDiv,
+        #computerDiv {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="windowDiv">Window Events</div>
+    <br />
+    <input id="keyboardDiv" value="Keyboard Events"></input>
+    <br /><br />
+    <div id="mobileDiv">Touch Event Area</div>
+    <br />
+    <div id="computerDiv">Click Event Area</div>
+    <br />
+    <script>
+        mDiv = document.getElementById("mobileDiv");
+        mDiv.ontouchstart = function () {
+            mDiv.innerHTML = "touch";
+        }
+        mDiv.ontouchmove = function () {
+            mDiv.innerHTML = "swipe";
+        }
+        mDiv.ontouchend = function () {
+            mDiv.innerHTML = "Touch Event Area";
+        }
+        window.onorientationchange = function () {
+            mDiv.innerHTML = "orientation change";
+        }
+
+        cDiv = document.getElementById("computerDiv");
+        cDiv.onclick = function () {
+            cDiv.innerHTML = "clicked";
+        }
+        cDiv.onmousedown = function () {
+            cDiv.innerHTML = "long click";
+        }
+        cDiv.onmouseenter = function () {
+            cDiv.innerHTML = "hover";
+        }
+        cDiv.onmouseleave = function () {
+            cDiv.innerHTML = "Click Event Area";
+        }
+
+        kDiv = document.getElementById("keyboardDiv");
+        kDiv.onkeydown = function () {
+            kDiv.value = "Key down: ";
+        }
+        kDiv.onkeyup = function () {
+            kDiv.value = "Keyboard Events";
+        }
+
+        wDiv = document.getElementById("windowDiv");
+        window.onresize = function () {
+            wDiv.innerHTML = "Resize";
+        }
+        window.onscroll = function () {
+            wDiv.innerHTML = "scroll";
+        }
+    </script>
+</body>
+
 </html>
