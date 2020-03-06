@@ -15,8 +15,8 @@
         <div id="mobileDiv" >Touch Event Area</div>
         <script>
             mDiv = document.getElementById("mobileDiv");
-            mDiv.touchstart = function(){
-                mDiv.textContent = "touch";
+            mDiv.ontouchstart = function(){
+                mDiv.innerHTML = "touch";
             }
         </script>
     </body>
