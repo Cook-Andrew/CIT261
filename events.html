@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Events</title>
+        <meta charset="utf-">
+        <style>
+            #mobileDiv{
+                border: 1px solid black;
+                width: 400px;
+                height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mobileDiv" >Touch Event Area</div>
+        <script>
+            mDiv = document.getElementById("mobileDiv");
+            mDiv.touchstart = function(){
+                mDiv.textContent = "touch";
+            }
+        </script>
+    </body>
+</html>
