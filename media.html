@@ -13,9 +13,12 @@
     <p>Dog video free from Pexel</p>
 
     <audio id="audioElement" src="dramatic.mp3">Your browser does not support HTML5 audio</audio>
-    <label>play music </label><button id="playButton">▶</button>
-    <p> if you disable controls, you can still control the media file with other elements using java script, like this &#60;button&#62; element</p>
-    <p></p>
+    <label>play music </label><button id="playButton">▶</button><p>(This file has a second of silence at the beginning. It'll play. Just be patient.)</p>
+    <p>If you disable the built in controls, you can still control the media file with other elements using java script, like this &#60;button&#62; element</p>
+    <p>music aquired from:  <a href="https://www.royaltyfree-music.com/free-music-download">track no. 7</a></p>
+    
+    <canvas id="canvasid" width="400px" height="200px" style="border: solid 1px black">Your browser does not support HTML5 canvas</canvas>
+    <p>Canvas is used to draw shapes onto the screen using JavaScript.</p>
     <script>
         var audioElem = document.getElementById("audioElement");
         var btn1 = document.getElementById("playButton");
@@ -26,6 +29,14 @@
             else
                 audioElem.pause();
         }
+
+        var cntxt = document.getElementById("canvasid").getContext("2d");
+        cntxt.beginPath();
+        cntxt.arc(90, 70, 50, 0, 2 * Math.PI);
+        cntxt.stroke();
+        cntxt.font = "30px Arial";
+        cntxt.strokeText("TEXT", 150, 160);
+        cntxt.fillRect(200, 30, 150, 80);
     </script>
 </body>
 
