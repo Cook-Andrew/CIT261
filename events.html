@@ -3,7 +3,7 @@
 
 <head>
     <title>Events</title>
-    <meta charset="utf-">
+    <meta charset="utf-8">
     <style>
         #mobileDiv,
         #computerDiv {
@@ -11,20 +11,82 @@
             width: 400px;
             height: 400px;
         }
+        #transitionDiv {
+            width: 100px;
+            height: 100px;
+            transition: all 2s 2s;
+            border: 1px solid black;
+        }
+        #transitionDiv.resize {
+            width: 200px;
+            height: 200px;
+        }
+        #animationDiv {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        #animationDiv.animate {
+            animation-name: animationExample;
+            animation-duration: 2s;
+        }
+        @keyframes animationExample {
+            from {background-color: white;}
+            to {background-color: black;}
+        }
     </style>
 </head>
 
 <body>
+    <label id="transitionLabel">Transition Events</label>
+    <div id="transitionDiv"></div>
+    <button id="transitionButton" onclick="transitionClick()">transition</button>
+    <br /><br/>
+    <label id="animationLabel">Animation Events</label>
+    <div id="animationDiv"></div>
+    <button id="animationButton" onclick="animationClick()">animation</button>
+    <br /><br/>
     <div id="windowDiv">Window Events</div>
     <br />
-    <input id="keyboardDiv" value="Keyboard Events"></input>
+    <input id="keyboardDiv" value="Keyboard Events">
     <br /><br />
     <div id="mobileDiv">Touch Event Area</div>
     <br />
     <div id="computerDiv">Click Event Area</div>
     <br />
     <script>
-        mDiv = document.getElementById("mobileDiv");
+        //transition
+        var tDiv = document.getElementById("transitionDiv");
+        var tLbl = document.getElementById("transitionLabel");
+        var tBtn = document.getElementById("transitionButton");
+        function transitionClick() {
+            tDiv.classList.add("resize");
+        }
+        tDiv.ontransitionrun = function () {
+            tLbl.innerHTML = "Transition run";
+        }
+        tDiv.ontransitionend = function () {
+            tLbl.innerHTML = "Transition end";
+            tDiv.classList.remove("resize");
+        }
+
+        //animation
+        var aDiv = document.getElementById("animationDiv");
+        var aLbl = document.getElementById("animationLabel");
+        var aBtn = document.getElementById("animationButton");
+        function animationClick() {
+            aDiv.classList.add("animate");
+        }
+        aDiv.onanimationrun = function () {
+            aLbl.innerHTML = "Animation run";
+        }
+        aDiv.onanimationend = function () {
+            aLbl.innerHTML = "Animation end";
+            aDiv.classList.remove("animate");
+        }
+
+        //mobile
+        var mDiv = document.getElementById("mobileDiv");
         mDiv.ontouchstart = function () {
             mDiv.innerHTML = "touch";
         }
@@ -38,7 +100,8 @@
             mDiv.innerHTML = "orientation change";
         }
 
-        cDiv = document.getElementById("computerDiv");
+        //mouse
+        var cDiv = document.getElementById("computerDiv");
         cDiv.onclick = function () {
             cDiv.innerHTML = "clicked";
         }
@@ -52,7 +115,8 @@
             cDiv.innerHTML = "Click Event Area";
         }
 
-        kDiv = document.getElementById("keyboardDiv");
+        //keyboard
+        var kDiv = document.getElementById("keyboardDiv");
         kDiv.onkeydown = function () {
             kDiv.value = "Key down: ";
         }
@@ -60,7 +124,8 @@
             kDiv.value = "Keyboard Events";
         }
 
-        wDiv = document.getElementById("windowDiv");
+        //window
+        var wDiv = document.getElementById("windowDiv");
         window.onresize = function () {
             wDiv.innerHTML = "Resize";
         }
