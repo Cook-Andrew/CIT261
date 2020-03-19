@@ -5,6 +5,14 @@
 <meta charset="utf-8">
 <title>Mi Espera! | Lernu Lingvo</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ $("ul").hide();
+ $("#hamburger").click(function(){
+  $("ul").slideToggle();
+ });
+});
+</script>
 </head>
 
 <body>
@@ -23,13 +31,5 @@
 <div id="container">Content will go here</div>
 </main>
 <footer>(C)2020 Andrew Cook | BYU-I CIT261</footer>
-<script>
-$(document).ready(function(){
- $("ol").hide();
- $("#hamburger").click(function(){
-  $("ol").slideToggle();
- });
-});
-</script>
 </body>
 </html>
