@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Mi Espera! | Lernu Lingvo</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<header>
+<h1>⭐️Mi Espera!⭐️</h1>
+<li id="hamburger">hamburger</li>
+<ul>
+<li><a href="pronouns.html">Pronouns</a></li>
+<li><a href="conjugation.html">Conjugation</a></li>
+<li><a href="syntax.html">Syntax</a></li>
+<li><a href="interrogative.html">Interrogative Setences</a></li>
+<li><a href="vocabulary.html">Vocaublary</a></li>
+</ul>
+</header>
+<main>
+<div id="container">Content will go here</div>
+</main>
+<footer>(C)2020 Andrew Cook | BYU-I CIT261</footer>
+<script>
+$(document).ready(function(){
+ $("ol").hide();
+ $("#hamburger").click(function(){
+  $("ol").slideToggle();
+ });
+});
+</script>
+</body>
+</html>
