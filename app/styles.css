@@ -5,3 +5,6 @@ color: white;
 header {
 background-color: lightgreen;
 }
+li {
+  list-style:none;
+}
