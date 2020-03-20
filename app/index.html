@@ -2,54 +2,90 @@
 <html lang="en-us">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mi Espera! | Lernu Lingvo</title>
-<link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
- $("ul").hide();
- $("#hamburger").click(function(){
-  $("ul").slideToggle();
- });
- $("#pronouns").click(function(){
-  $("#container").load("pronouns.html");
- });
- $("#conjugation").click(function(){
-  $("#container").load("conjugation.html");
- });
- $("#syntax").click(function(){
-  $("#container").load("syntax.html");
- });
- $("#interrogative").click(function(){
-  $("#container").load("interrogative.html");
- });
- $("#vocabulary").click(function(){
-  $("#container").load("vocabulary.html");
- });
-});
-</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi Esperas! | Lernu novan Lingvon</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("ul").hide();
+            $("#hamburger").click(function() {
+                $("ul").slideToggle();
+            });
+            $("#pronouns").click(function() {
+                $("#container")
+                .slideToggle()
+                .queue(function(next) {
+                    $(this).load("pronouns.html");
+                    next();
+                })
+                .slideToggle(1000);
+                });
+            });
+            $("#conjugation").click(function() {
+                $("#container")
+                .slideToggle()
+                .queue(function(next) {
+                    $(this).load("conjugation.html");
+                    next();
+                })
+                .slideToggle(1000);
+            });
+            $("#syntax").click(function() {
+                $("#container")
+                .slideToggle()
+                .queue(function(next) {
+                    $(this).load("syntax.html");
+                    next();
+                })
+                .slideToggle(1000);
+            });
+            $("#interrogative").click(function() {
+                $("#container")
+                .slideToggle()
+                .queue(function(next) {
+                    $(this).load("interrogative.html");
+                    next();
+                })
+                .slideToggle(1000);
+            });
+            $("#vocabulary").click(function() {
+                $("#container")
+                .slideToggle()
+                .queue(function(next) {
+                    $(this).load("vocabulary.html");
+                    next();
+                })
+                .slideToggle(1000);
+            });
+            $("#container").click(function() {
+                $("ul").slideUp();
+            });
+        });
+    </script>
 </head>
 
 <body>
-<header>
-<h1>⭐️Mi Espera!⭐️</h1>
- <nav>
-<span id="hamburger">&#9776;</span>
-<ul>
-<li id="pronouns">Pronouns</li>
-<li id="conjugation">Conjugation</li>
-<li id="syntax">Syntax</li>
-<li id="interrogative">Interrogative Sentences</li>
-<li id="vocabulary">Vocaublary</li>
-</ul>
- </nav>
-</header>
-<main>
-<div id="container">Content will go here</div>
-</main>
-<footer>(C)2020 Andrew Cook | BYU-I CIT261</footer>
+    <header>
+        <h1>&#9733; Mi Esperas! &#9733;</h1>
+        <nav>
+            <span id="hamburger">&#9776;</span>
+            <ul>
+                <li id="pronouns">Pronouns</li>
+                <li id="conjugation">Conjugation</li>
+                <li id="syntax">Syntax</li>
+                <li id="interrogative">Interrogative Sentences</li>
+                <li id="vocabulary">Vocabulary</li>
+            </ul>
+        </nav>
+    </header>
+        <div id="container">
+            <h2>I Hope</h2>
+            <hr/>
+        </div>
+    <footer>&copy; 2020 Andrew Cook | BYU-I CIT261</footer>
 </body>
+
 </html>

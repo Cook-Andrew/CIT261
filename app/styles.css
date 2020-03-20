@@ -1,10 +1,71 @@
-header h1 {
-background-color:green;
-color: white;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Playfair+Display&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
 }
-header {
-background-color: lightgreen;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Baloo 2', cursive;
 }
+
+header,
+footer {
+  font-family: 'Baloo 2', cursive;
+  background-color: green;
+  color: white;
+  border-bottom-left-radius: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+}
+
+span {
+  width: 100%;
+}
+
+li {
+  text-align: left;
+  padding-left: 30%;
+  padding-bottom: 2px;
+}
+
+li:hover {
+  background-color: white;
+  border: solid 1px lightgreen;
+}
+
+nav {
+  color: black;
+  background-color: lightgreen;
+}
+
+#container {
+  width: 80%;
+  margin: auto;
+  height: 30rem;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+.example {
+  -ms-overflow-style: none;
+}
+
+footer {
+  padding: 1rem;
+  height: 2rem;
+}
+
 ul {
-  list-style:none;
+  border-top: solid 1px green;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
