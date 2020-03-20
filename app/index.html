@@ -11,6 +11,21 @@ $(document).ready(function(){
  $("#hamburger").click(function(){
   $("ul").slideToggle();
  });
+ $("#pronouns").click(function(){
+  $("#container").load("pronouns.html");
+ });
+ $("#conjugation").click(function(){
+  $("#container").load("conjugation.html");
+ });
+ $("#syntax").click(function(){
+  $("#container").load("syntax.html");
+ });
+ $("#interrogative").click(function(){
+  $("#container").load("interrogative.html");
+ });
+ $("#vocabulary").click(function(){
+  $("#container").load("vocabulary.html");
+ });
 });
 </script>
 </head>
@@ -20,11 +35,11 @@ $(document).ready(function(){
 <h1>⭐️Mi Espera!⭐️</h1>
 <li id="hamburger">hamburger</li>
 <ul>
-<li><a href="pronouns.html">Pronouns</a></li>
-<li><a href="conjugation.html">Conjugation</a></li>
-<li><a href="syntax.html">Syntax</a></li>
-<li><a href="interrogative.html">Interrogative Setences</a></li>
-<li><a href="vocabulary.html">Vocaublary</a></li>
+<li id="pronouns">Pronouns</li>
+<li id="conjugation">Conjugation</li>
+<li id="syntax">Syntax</li>
+<li id="interrogative">Interrogative Setences<</li>
+<li id="vocabulary">Vocaublary</li>
 </ul>
 </header>
 <main>
