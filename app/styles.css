@@ -22,11 +22,12 @@ footer {
   text-align: center;
 }
 
-span {
+li {
   width: 100%;
+  list-style: none;
 }
 
-li {
+ul li {
   text-align: left;
   padding-left: 30%;
   padding-bottom: 2px;
@@ -68,4 +69,16 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+#check{
+  position: absolute;
+  left: 5%; 
+}
+#wrong{
+  color: red;
+  padding-left: 2em;
+}
+#quiz{
+  width:80%;
+  margin:auto;
 }
