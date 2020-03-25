@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$("#start").click(function () {
     $("#quiz").load("quiz.html", function(){
         $("#check").hide();
         $("#wrong").hide();

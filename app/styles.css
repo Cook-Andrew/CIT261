@@ -83,7 +83,47 @@ ul {
   margin:auto;
 }
 
-#completion[value]{
-  -webkit-appearance: none;
-  appearance: none;
+input[type=text]{
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+input[type=button] {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  padding: .5em;
+}
+input[type=button]:active {
+  background-color: lightgreen;
+}
+
+progress {
+  width: 15em;
+  height: 1.2em;
+  border: 0px transparent;
+  background: lightgreen;
+  border-radius: 5px;
+}
+progress::-webkit-progress-bar { 
+  background: lightgreen;
+  border-radius: 5px;
+ }
+
+progress[value] {
+  color:lightgreen;
+  border-radius: 5px;
+} /* IE10 */
+progress::-webkit-progress-bar-value {
+  color:lightgreen;
+  border-radius: 5px;
+}
+progress::-webkit-progress-value {
+  color:lightgreen;
+  border-radius: 5px;
+}
+progress::-moz-progress-bar {
+  color:lightgreen;
+  border-radius: 5px;
 }
