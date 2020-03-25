@@ -17,6 +17,7 @@ $(document).ready(function () {
                         index += 1;
                     }
                     $("#question").text(quizJson.questions[index]);
+                    $("html").trigger("click");
                     next();
                 });
             } else {

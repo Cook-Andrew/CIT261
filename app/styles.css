@@ -82,3 +82,8 @@ ul {
   width:80%;
   margin:auto;
 }
+
+#completion[value]{
+  -webkit-appearance: none;
+  appearance: none;
+}
