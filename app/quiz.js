@@ -3,6 +3,7 @@ $("#start").click(function () {
         $("#check").hide();
         $("#wrong").hide();
         $("#completion").attr("max", quizJson.answers.length);
+        $("#completion").val(index);
         $("#question").text(quizJson.questions[index]);
         $("input:first").on("focusout",function() {
             /* $("#button").trigger("click");  //turns out that this double triggers if you click the button

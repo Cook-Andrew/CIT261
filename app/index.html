@@ -25,11 +25,24 @@
             </ul>
         </nav>
     </header>
-        <div id="container">
-            <h2>I Hope</h2>
-            <hr/>
-        </div>
+    <div id="container">
+        
+    </div>
     <footer>&copy; 2020 Andrew Cook | BYU-I CIT261</footer>
+    <script>
+        $(document).ready(function(){
+        $("#container").load("home.html");
+        $('h1').click(function () {
+            $("#container")
+            .slideToggle()
+            .queue(function (next) {
+                $(this).load("home.html");
+                next();
+            })
+            .slideToggle(1000);
+        });
+    });
+    </script>
 </body>
 
 </html>
