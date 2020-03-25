@@ -1,5 +1,6 @@
 <h2>Vocabulary</h2>
 <hr />
+<div id="quiz"><input type="button" value="Begin Quiz" id="start"></div>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis nisi nulla. Etiam eu metus nulla. In eget
     ornare nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas tristique ante a varius aliquam.
     Ut eget porta lectus, sit amet scelerisque mauris. Nam eget diam vulputate, rutrum felis quis, molestie ex. Mauris
@@ -33,3 +34,23 @@
     enim. Nulla vehicula sodales nisl at laoreet. Donec rutrum in enim ac rhoncus. Orci varius natoque penatibus et
     magnis dis parturient montes, nascetur ridiculus mus.
 </p>
+<script>
+    var quizJson = {};
+    var index = 0;
+    $.getJSON("vocabulary.json", function (result) {
+        quizJson = result;
+    });
+    if (localStorage.getItem("vocabularyProgress") != null ) {
+        index = parseInt(localStorage.getItem("vocabularyProgress"));
+        $("#completion").val(index);
+    } else {
+        localStorage.vocabularyProgress = 0;
+    }
+</script>
+<script src="quiz.js"></script>
+<script>
+    $("html").on("click", function() {
+        localStorage.setItem("vocabularyProgress", index);
+        $("#completion").val(index);
+    });
+</script>
