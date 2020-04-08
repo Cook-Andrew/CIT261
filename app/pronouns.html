@@ -1,30 +1,52 @@
 <h2>Pronouns</h2>
 <hr />
 <div id="quiz"><input type="button" value="Begin Quiz" id="start"></div>
+<p>Pronouns in Esperanto are incredibly regular! Esperanto is all about consistent rules.</p>
+<h3>Possessive Case</h3>
+<p>In English we sometimes change the form of words like I to 'mine'. In order to minimize confustion, Esperanto always
+    adds a suffix without changing the word. To make a pronoun possessive, you add the suffix '-a'. The reflexive possessive case is used to distinguish between objects belonging to the same person or a different person. For example, "He likes his dog" could mean he likes his own dog (li ŝatas sian hundon), or he likes someone elses dog (li ŝatas lian hundon).</p>
+<h3>Accusative Case</h3>
+<p>Accusative case is when something is the "target" of a sentence. For example, "I like <em>them</em>" rather than "I
+    like <em>they</em>". In Esperanto, we add the suffix '-n' to the end. There is no reflexive accusative case (speaking in third
+    person) difference: "myself" is just the same as "me"</p>
+<h3>Special Pronouns</h3>
+<p>The indefinate 'one' such as 'one must be dignified' is 'oni'. The equivalent to 'thou' is 'ci'. These will not come up terribly often, but it is wise for one to know them.</p>
+<h3>Chart</h3>
 <table>
-    <p></p>
     <tr>
-    <th>Person</th><th>Singular</th><th>Plural</th>
+        <th>Person</th>
+        <th>Singular</th>
+        <th>Plural</th>
     </tr>
     <tr>
-        <td>1st</td><td>mi (I)</td><td>ni (we)</td>
+        <td>1st</td>
+        <td>mi (I)</td>
+        <td>ni (we)</td>
     </tr>
     <tr>
-        <td>2nd</td><td colspan="2">vi (you)</td>
+        <td>2nd</td>
+        <td colspan="2">vi (you)</td>
     </tr>
     <tr>
-        <td>3rd</td><td><ol><li>li (he)</li>
-            <li>ŝi (she)</li>
-            <li>ĝi (it)</li></ol></td><td>ili (they)</td>
+        <td>3rd</td>
+        <td>
+            <ol>
+                <li>li (he)</li>
+                <li>ŝi (she)</li>
+                <li>ĝi (it)</li>
+            </ol>
+        </td>
+        <td>ili (they)</td>
     </tr>
 </table>
+<br />
 <script>
     var quizJson = {};
     var index = 0;
     $.getJSON("pronouns.json", function (result) {
         quizJson = result;
     });
-    if (localStorage.getItem("pronounsProgress") != null ) {
+    if (localStorage.getItem("pronounsProgress") != null) {
         index = parseInt(localStorage.getItem("pronounsProgress"));
         $("#completion").val(index);
     } else {
@@ -33,7 +55,7 @@
 </script>
 <script src="quiz.js"></script>
 <script>
-    $("html").on("click", function() {
+    $("html").on("click", function () {
         localStorage.setItem("pronounsProgress", index);
         $("#completion").val(index);
     });
