@@ -46,7 +46,7 @@ nav {
 #container {
   width: 80%;
   margin: auto;
-  height: 30rem;
+  height: 70vh;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -70,24 +70,56 @@ ul {
   margin: 0;
   padding: 0;
 }
-ol{
-  list-style-type: upper-greek;
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-#check{
+table{
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  border: 1px solid green;
+}
+#reset {
+  font-size: .7rem;
+}
+
+@keyframes reset_quiz {
+  from {
+    color: white;
+  }
+
+  to {
+    color: lime;
+  }
+}
+
+.resetdone {
+  animation-name: reset_quiz;
+  animation-duration: 2s;
+  color: lime;
+}
+
+#check {
   position: absolute;
-  left: 5%; 
+  left: 5%;
 }
-#wrong{
+
+#wrong {
   color: red;
   padding-left: 2em;
 }
-#quiz{
-  width:80%;
+
+#quiz {
+  width: 80%;
   height: 20%;
-  margin:auto;
+  margin: auto;
 }
 
-input[type=text]{
+input[type=text] {
   border: 1px solid black;
   border-radius: 5px;
 }
@@ -99,6 +131,7 @@ input[type=button] {
   border-radius: 5px;
   padding: .5em;
 }
+
 input[type=button]:active {
   background-color: lightgreen;
 }
@@ -110,24 +143,29 @@ progress {
   background: lightgreen;
   border-radius: 5px;
 }
-progress::-webkit-progress-bar { 
+
+progress::-webkit-progress-bar {
   background: lightgreen;
   border-radius: 5px;
- }
+}
 
 progress[value] {
-  color:lightgreen;
+  color: lightgreen;
   border-radius: 5px;
-} /* IE10 */
+}
+
+/* IE10 */
 progress::-webkit-progress-bar-value {
-  color:lightgreen;
+  color: lightgreen;
   border-radius: 5px;
 }
+
 progress::-webkit-progress-value {
-  color:lightgreen;
+  color: lightgreen;
   border-radius: 5px;
 }
+
 progress::-moz-progress-bar {
-  color:lightgreen;
+  color: lightgreen;
   border-radius: 5px;
 }

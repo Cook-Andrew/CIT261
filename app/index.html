@@ -28,7 +28,8 @@
     <div id="container">
         
     </div>
-    <footer>&copy; 2020 Andrew Cook | BYU-I CIT261</footer>
+    <footer>&copy; 2020 Andrew Cook | BYU-I CIT261<br/>
+        <span id="reset">Reset quizes.</span></footer>
     <script>
         $(document).ready(function(){
         $("#container").load("home.html");
@@ -40,6 +41,28 @@
                 next();
             })
             .slideToggle(1000);
+        });
+        $('#reset').click(function(){
+            $(this).addClass('resetdone');
+            this.addEventListener("webkitAnimationEnd", animEnd);
+            this.addEventListener("animationEnd", animEnd); //browser support
+            function animEnd(event) {
+                this.removeEventListener("webkitAnimationEnd", animEnd);
+                this.addEventListener("animationEnd", animEnd); //browser support
+                $(this).removeClass("resetdone");
+            }
+            index = 0;
+            if (typeof quizJson === "undefined") { 
+                console.log("boing! quizJson undefined.");
+            } else {
+                $("#question").text(quizJson.questions[index]);
+            }
+            $("#completion").val(0);
+            localStorage.conjugationProgress = 0;
+            localStorage.interrogativeProgress = 0;
+            localStorage.pronounsProgress = 0;
+            localStorage.syntaxProgress = 0;
+            localStorage.vocabularyProgress = 0;
         });
     });
     </script>
