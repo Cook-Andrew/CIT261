@@ -1,4 +1,4 @@
 {
-    "questions":[ "Car 1?", "Car 2?", "Car three?", "Lesson Complete!" ],
-    "answers":[ "Ford", "BMW", "Fiat" ]
+    "questions":[ "To be", "To have", "To do", "To say", "To go", "Being", "Having", "Doing", "Saying", "Going", "Was", "Had", "Did", "Said", "Went", "Will be", "Will have", "Will do", "Will say", "Will go", "Would be", "Would have", "Would do", "Would say", "Would go", "Be", "Have", "Do", "Say", "Go", "Lesson Complete!" ],
+    "answers":[ "Esti", "Havi", "fari", "diri", "iri", "Estas", "Havas", "faras", "diras", "iras", "Estis", "Havis", "faris", "diris", "iris", "Estos", "Havos", "faros", "diros", "iros", "Estus", "Havus", "farus", "dirus", "irus", "Estu", "Havu", "faru", "diru", "iru" ]
 }
